@@ -1,0 +1,58 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        "schedule:weekly",
+        ":gitSignOff",
+    ],
+    "enabledManagers": [
+        "cargo",
+        "github-actions",
+    ],
+    "automergeStrategy": "rebase",
+    "assignees": ["jwodder"],
+    "commitBodyTable": true,
+    "commitMessageLowerCase": "never",
+    "dependencyDashboardLabels": ["CI", "dependencies"],
+    "dependencyDashboardTitle": "Renovate Dependency Dashboard",
+    "labels": ["dependencies"],
+    "semanticCommits": "disabled",
+    "separateMajorMinor": false,
+    "timezone": "America/New_York",
+
+    "cargo": {
+        "addLabels": ["d:cargo"],
+        "automerge": true,
+        "lockFileMaintenance": {
+            "enabled": true,
+            "extends": ["schedule:monthly"]
+        },
+        "rangeStrategy": "update-lockfile",
+    },
+
+    "github-actions": {
+        "addLabels": ["d:github-actions"],
+    },
+
+    "packageRules": [
+        {
+            "groupName": "Cargo non-breaking updates (0.x)",
+            "matchManagers": ["cargo"],
+            "matchCurrentVersion": "<1.0.0",
+            "matchUpdateTypes": ["patch"],
+            "enabled": false,  // Only update via monthly lockfile maintenance
+        },
+        {
+            "groupName": "Cargo non-breaking updates (x.y)",
+            "matchManagers": ["cargo"],
+            "matchCurrentVersion": ">=1.0.0",
+            "matchUpdateTypes": ["minor", "patch"],
+            "enabled": false,  // Only update via monthly lockfile maintenance
+        },
+        {
+            "groupName": "rstest dependencies",
+            "matchManagers": ["cargo"],
+            "matchPackageNames": ["rstest", "rstest_reuse"],
+        },
+    ],
+}
