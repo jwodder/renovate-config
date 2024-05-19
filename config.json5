@@ -23,15 +23,18 @@
     "cargo": {
         "addLabels": ["d:cargo"],
         "automerge": true,
+        "commitMessagePrefix": "[cargo]",
         "lockFileMaintenance": {
             "enabled": true,
-            "extends": ["schedule:monthly"]
+            "extends": ["schedule:monthly"],
+            "commitMessageAction": "Autoupdate Cargo.lock",
         },
         "rangeStrategy": "update-lockfile",
     },
 
     "github-actions": {
         "addLabels": ["d:github-actions"],
+        "commitMessagePrefix": "[github-actions]",
     },
 
     "packageRules": [
