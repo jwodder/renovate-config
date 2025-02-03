@@ -53,6 +53,11 @@
             "enabled": false,  // Only update via monthly lockfile maintenance
         },
         {
+            "groupName": "rand dependencies",
+            "matchManagers": ["cargo"],
+            "matchPackageNames": ["rand", "rand_chacha"],
+        },
+        {
             "groupName": "rstest dependencies",
             "matchManagers": ["cargo"],
             "matchPackageNames": ["rstest", "rstest_reuse"],
