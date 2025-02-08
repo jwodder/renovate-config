@@ -13,7 +13,7 @@
     "assignees": ["jwodder"],
     "commitBodyTable": true,
     "commitMessageLowerCase": "never",
-    "dependencyDashboardLabels": ["CI", "dependencies"],
+    "dependencyDashboardLabels": ["CI", "dashboard", "dependencies"],
     "dependencyDashboardTitle": "Renovate Dependency Dashboard",
     "labels": ["dependencies"],
     "semanticCommits": "disabled",
