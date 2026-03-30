@@ -62,5 +62,19 @@
             "matchManagers": ["cargo"],
             "matchPackageNames": ["rstest", "rstest_reuse"],
         },
+        {
+            "groupName": "RustCrypto dependencies",
+            "matchManagers": ["cargo"],
+            "matchPackageNames": [
+                "cipher",
+                "digest",
+                "hmac",
+                "md-5",
+                "pbkdf2",
+                "rc4",
+                "sha1",
+                "sha2",
+            ]
+        },
     ],
 }
