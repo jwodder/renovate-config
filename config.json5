@@ -35,6 +35,10 @@
     "github-actions": {
         "addLabels": ["d:github-actions"],
         "commitMessagePrefix": "[github-actions]",
+        "extends": [
+            "helpers:pinGitHubActionDigestsToSemver",
+            "schedule:monthly",
+        ],
     },
 
     "packageRules": [
