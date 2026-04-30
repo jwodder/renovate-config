@@ -95,6 +95,13 @@
             ]
         },
         {
+            "groupName": "GitHub Actions non-breaking updates (disabled)",
+            "matchManagers": ["github-actions"],
+            "matchCurrentVersion": ">=1.0.0",
+            "matchUpdateTypes": ["minor", "patch"],
+            "enabled": false,
+        },
+        {
             "matchFileNames": ["docs/requirements.txt"],
             "commitMessagePrefix": "[python+docs]",
         },
