@@ -8,6 +8,8 @@
     "enabledManagers": [
         "cargo",
         "github-actions",
+        "pep621",
+        "pip_requirements",
     ],
     "automergeStrategy": "rebase",
     "assignees": ["jwodder"],
