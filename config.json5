@@ -41,6 +41,18 @@
         ],
     },
 
+    "pep621": {
+        "addLabels": ["d:python"],
+        "commitMessagePrefix": "[python]",
+        "rangeStrategy": "replace",
+    },
+
+    "pip_requirements": {
+        "addLabels": ["d:python"],
+        "commitMessagePrefix": "[python]",
+        "rangeStrategy": "replace",
+    },
+
     "packageRules": [
         {
             "groupName": "Cargo non-breaking updates (0.x)",
@@ -79,6 +91,10 @@
                 "sha1",
                 "sha2",
             ]
+        },
+        {
+            "matchFileNames": ["docs/requirements.txt"],
+            "commitMessagePrefix": "[python+docs]",
         },
     ],
 }
