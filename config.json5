@@ -39,7 +39,7 @@
         "commitMessagePrefix": "[github-actions]",
         "extends": [
             "helpers:pinGitHubActionDigestsToSemver",
-            "schedule:monthly",
+            //"schedule:monthly",
         ],
     },
 
