@@ -38,7 +38,7 @@
         "addLabels": ["d:github-actions"],
         "commitMessagePrefix": "[github-actions]",
         "extends": [
-            "helpers:pinGitHubActionDigestsToSemver",
+            "helpers:pinGitHubActionDigests",
             //"schedule:monthly",
         ],
     },
@@ -97,8 +97,8 @@
         {
             "groupName": "GitHub Actions non-breaking updates (disabled)",
             "matchManagers": ["github-actions"],
-            "matchCurrentVersion": ">=1.0.0",
-            "matchUpdateTypes": ["minor", "patch"],
+            //"matchCurrentVersion": ">=1.0.0",
+            "matchUpdateTypes": ["minor", "patch", "digest"],
             "enabled": false,
         },
         {
