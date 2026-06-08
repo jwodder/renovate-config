@@ -23,6 +23,8 @@ import ghreq
 from ghreq import PrettyHTTPError
 from ghtoken import get_ghtoken
 
+RENOVATE_CONFIG_PATH = ".github/renovate.json5"
+
 
 class Client(ghreq.Client):
     def get_my_repos(self) -> Iterator[str]:
@@ -51,7 +53,7 @@ def main() -> None:
     out.writeheader()
     with Client(token=get_ghtoken()) as client:
         for repo in client.get_my_repos():
-            renovated = client.path_exists(repo, ".github/renovate.json5")
+            renovated = client.path_exists(repo, RENOVATE_CONFIG_PATH)
             out.writerow({"repo": repo, "renovated": "t" if renovated else "f"})
 
 
