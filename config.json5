@@ -2,7 +2,6 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:recommended",
-        "schedule:weekly",
         ":gitSignOff",
     ],
     "enabledManagers": [
@@ -18,6 +17,7 @@
     "dependencyDashboardLabels": ["CI", "dashboard", "dependencies"],
     "dependencyDashboardTitle": "Renovate Dependency Dashboard",
     "labels": ["dependencies"],
+    "schedule": ["* * * * 1"],  // Any time on Monday
     "semanticCommits": "disabled",
     "separateMajorMinor": false,
     "timezone": "America/New_York",
@@ -28,8 +28,8 @@
         "commitMessagePrefix": "[cargo]",
         "lockFileMaintenance": {
             "enabled": true,
-            "extends": ["schedule:monthly"],
             "commitMessageAction": "Autoupdate Cargo.lock",
+            "schedule": ["* * 1 * *"],  // Any time on the first of the month
         },
         "rangeStrategy": "update-lockfile",
     },
@@ -39,7 +39,7 @@
         "commitMessagePrefix": "[github-actions]",
         "extends": [
             "helpers:pinGitHubActionDigests",
-            //"schedule:monthly",
+            //"schedule": ["* * 1 * *"],  // Any time on the first of the month
         ],
     },
 
